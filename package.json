@@ -7,7 +7,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"bundle": "webpack -d",
 		"dev": "npm run bundle && webpack -d --watch",
-		"build": "webpack -p && gulp sass"
+		"build": "webpack -p && gulp sass",
+		"sass": "gulp sass && gulp sass:watch"
 	},
 	"repository": {
 		"type": "git",

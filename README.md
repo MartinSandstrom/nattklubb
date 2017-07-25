@@ -12,6 +12,12 @@
     $ npm run dev
 ```
 
+## Build CSS
+
+```
+    $ npm run sass
+```
+
 ## Dev
 
 ```
