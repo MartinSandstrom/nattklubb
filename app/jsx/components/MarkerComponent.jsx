@@ -10,12 +10,19 @@ export default class TestComponent extends React.Component {
 		};
 	}
 
-	toggleInformation = () => this.setState({showInformation: !this.state.showInformation})
+	toggleInformation = () => this.setState({
+		showInformation: !this.state.showInformation
+	});
+
+	close = () => {
+		this.props.onClubClick('');
+		this.setState({showInformation: false});
+	}
 
 	renderPopover = () => {
-		if (this.state.showInformation) {
+		if (this.state.showInformation || (this.props.clickedClub === this.props.name)) {
 			return (
-				<Popover title={this.props.name} close={this.toggleInformation}>
+				<Popover title={this.props.name} close={this.close}>
 					<p>
 						Här kommer lite information om det här stället
 					</p>
@@ -28,7 +35,7 @@ export default class TestComponent extends React.Component {
 	render() {
 		return (
 			<div>
-				<i id={this.props.name} onClick={this.toggleInformation} onMouseEnter={() => this.props.onHoverEnter(this.props.name)} className={`fa fa-map-marker fa-3x pointer ${this.props.choosenClub === this.props.name ? 'active-club' : ''}`}></i>
+				<i id={this.props.name} onMouseEnter={() => this.props.onHoverEnter(this.props.name)} onClick={this.toggleInformation} className={`fa fa-map-marker fa-3x pointer club-marker ${this.props.hoveredClub === this.props.name ? 'active-club' : ''}`}></i>
 				{this.renderPopover()}
 			</div>
 		);

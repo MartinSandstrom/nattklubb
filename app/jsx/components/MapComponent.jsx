@@ -7,7 +7,8 @@ export default class TestComponent extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			choosenClub: ''
+			hoveredClub: '',
+			clickedClub: ''
 		};
 	}
 
@@ -19,14 +20,16 @@ export default class TestComponent extends React.Component {
 		zoom: 13
 	};
 
-	onHoverEnter = (name) => this.setState({choosenClub: name});
+	onHoverEnter = (name) => this.setState({hoveredClub: name});
+
+	onClubClick = (name) => this.setState({clickedClub: name});
 
 	render() {
 		let clubsElements = this.props.clubs.map((club, index) => (
-			<Marker choosenClub={this.state.choosenClub} onHoverEnter={this.onHoverEnter} key={index} name={club.name} lat={club.lat} lng={club.lng}></Marker>
+			<Marker onClubClick={this.onClubClick} clickedClub={this.state.clickedClub} hoveredClub={this.state.hoveredClub} onHoverEnter={this.onHoverEnter} key={index} name={club.name} lat={club.lat} lng={club.lng}></Marker>
 		));
 		let asideElements = this.props.clubs.map((club, index) => (
-			<AsideBox choosenClub={this.state.choosenClub} onHoverEnter={this.onHoverEnter} key={index} title={club.name}></AsideBox>
+			<AsideBox onClubClick={this.onClubClick} clickedClub={this.state.clickedClub} hoveredClub={this.state.hoveredClub} onHoverEnter={this.onHoverEnter} key={index} title={club.name}></AsideBox>
 		));
 		return (
 			<div className="row">
@@ -38,7 +41,7 @@ export default class TestComponent extends React.Component {
 					</GoogleMapReact>
 				</div>
 				<div className="col-sm-3 no-padding">
-					<h3>Nattklubbar</h3>
+					<h3 className="text-center">Nattklubbar</h3>
 					<div className="aside-list-container">
 						{asideElements}
 					</div>
