@@ -6,17 +6,18 @@
     $ npm install
 ```
 
-## Dev 
+## Build JS
+
+```
+    $ npm run dev
+```
+
+## Dev
 
 ```
     $ nodemon app.js
 ```
 
-# Bundle Webpack
-
-```
-    $ npm run dev
-```
 
 
 
