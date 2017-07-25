@@ -10,12 +10,7 @@ export default class TestComponent extends React.Component {
 		};
 	}
 
-	toggleInformation = () => {
-		console.info('hifrom : ', this.props.name);
-		this.setState({
-			showInformation: !this.state.showInformation
-		});
-	}
+	toggleInformation = () => this.setState({showInformation: !this.state.showInformation})
 
 	renderPopover = () => {
 		if (this.state.showInformation) {

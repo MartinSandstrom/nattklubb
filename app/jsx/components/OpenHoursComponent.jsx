@@ -8,8 +8,11 @@ export default class TestComponent extends React.Component {
 	render() {
 		return (
 			<div className="">
-                <p><strong>I am open nine to five (8) </strong></p>
-                <p>♪┏(°.°)┛┗(°.°)┓┗(°.°)┛♪</p>
+				<p>
+					<strong>I am open nine to five (8)
+					</strong>
+				</p>
+				<p>♪┏(°.°)┛┗(°.°)┓┗(°.°)┛♪</p>
 			</div>
 		);
 	}

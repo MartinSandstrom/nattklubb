@@ -8,7 +8,8 @@
 		"bundle": "webpack -d",
 		"dev": "npm run bundle && webpack -d --watch",
 		"build": "webpack -p && gulp sass",
-		"sass": "gulp sass && gulp sass:watch"
+		"sass": "gulp sass && gulp sass:watch",
+		"deploy": "npm run build && gulp sass && gulp deploy"
 	},
 	"repository": {
 		"type": "git",
