@@ -34,12 +34,11 @@
 		"google-map-react": "^0.24.0",
 		"gulp": "^3.9.1",
 		"node-sass": "^4.5.2",
-		"react": "15.4.2",
-		"react-addons-css-transition-group": "^15.4.2",
+		"react": "^15.4.2",
+		"react-addons-css-transition-group": "^15.6.0",
 		"react-addons-test-utils": "^15.4.2",
-		"react-addons-transition-group": "^15.4.2",
-		"react-dom": "^15.4.2",
-		"react-modal": "^1.6.5",
+		"react-addons-transition-group": "^15.6.0",
+		"react-dom": "^15.6.1",
 		"webpack": "^2.2.1"
 	},
 	"devDependencies": {
