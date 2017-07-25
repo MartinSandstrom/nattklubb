@@ -1,6 +1,7 @@
 import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from './MarkerComponent.jsx';
+import {clubs} from '../clubs.js';
 
 export default class TestComponent extends React.Component {
 	constructor(props) {
@@ -17,14 +18,23 @@ export default class TestComponent extends React.Component {
 	};
 
 	render() {
+		let clubsElements = clubs.map((club, index) => (
+			<Marker key={index} name={club.name} lat={club.lat} lng={club.lng}></Marker>
+		));
 		return (
-			<div className="map-container">
-				<GoogleMapReact bootstrapURLKeys={{key: 'AIzaSyAEgBo9VxEFnxjfSjywJEQAJCYQat7SvJs'}} defaultCenter={this.props.center} defaultZoom={this.props.zoom}>
-					<Marker name="Oxid" lat={59.334591} lng={18.063240}></Marker>
-					<Marker name="Nått" lat={59.334591} lng={18.093240}></Marker>
-					<Marker name="Annat" lat={59.334591} lng={18.033240}></Marker>
-					<Marker name="Ställe" lat={59.344591} lng={18.063240}></Marker>
-				</GoogleMapReact>
+			<div className="row">
+				<div className="map-container col-sm-9">
+					<GoogleMapReact bootstrapURLKeys={{
+						key: 'AIzaSyAEgBo9VxEFnxjfSjywJEQAJCYQat7SvJs'
+					}} defaultCenter={this.props.center} defaultZoom={this.props.zoom}>
+
+						{clubsElements}
+
+					</GoogleMapReact>
+				</div>
+				<div className="col-sm-3">
+					<h3>List with all places</h3>
+				</div>
 			</div>
 		);
 	}
