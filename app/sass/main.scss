@@ -1,3 +1,24 @@
-body{
-	background-color: blue;
+body {
+	margin-top: 64px !important;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.info-popover {
+	min-width: 200px;
+}
+
+.map-container {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	height: 100%;
 }

@@ -18,8 +18,7 @@ export default class TestComponent extends React.Component {
 
 	render() {
 		return (
-			<div>
-				<h1>MapComponent</h1>
+			<div className="map-container">
 				<GoogleMapReact bootstrapURLKeys={{key: 'AIzaSyAEgBo9VxEFnxjfSjywJEQAJCYQat7SvJs'}} defaultCenter={this.props.center} defaultZoom={this.props.zoom}>
 					<Marker name="Oxid" lat={59.334591} lng={18.063240}></Marker>
 					<Marker name="Nått" lat={59.334591} lng={18.093240}></Marker>
