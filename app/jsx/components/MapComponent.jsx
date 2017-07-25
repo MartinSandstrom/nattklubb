@@ -2,11 +2,6 @@ import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from './MarkerComponent.jsx';
 
-const GoogleMapConfig = {
-	key: 'AIzaSyAEgBo9VxEFnxjfSjywJEQAJCYQat7SvJs',
-	libraries: 'places'
-};
-
 export default class TestComponent extends React.Component {
 	constructor(props) {
 		super(props);
