@@ -1,3 +1,5 @@
+$grey: #eee;
+
 body {
 	margin-top: 64px !important;
 }
@@ -21,4 +23,23 @@ body {
 	-ms-flex-direction: column;
 	flex-direction: column;
 	height: 100%;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.aside-list-container {
+	.aside-box {
+		padding: 10px 15px;
+		border-bottom: 1px solid $grey;
+
+		&:first-child {
+			border-top: 1px solid $grey;
+		}
+
+		&:hover {
+			background-color: $grey;
+		}
+	}
 }
