@@ -28,7 +28,7 @@ export default class TestComponent extends React.Component {
 	render() {
 		return (
 			<div>
-				<i id={this.props.name} onClick={this.toggleInformation} className="fa fa-map-marker fa-3x pointer"></i>
+				<i id={this.props.name} onClick={this.toggleInformation} onMouseEnter={() => this.props.onHoverEnter(this.props.name)} className={`fa fa-map-marker fa-3x pointer ${this.props.choosenClub === this.props.name ? 'active-club' : ''}`}></i>
 				{this.renderPopover()}
 			</div>
 		);

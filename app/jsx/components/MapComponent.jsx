@@ -23,10 +23,10 @@ export default class TestComponent extends React.Component {
 
 	render() {
 		let clubsElements = this.props.clubs.map((club, index) => (
-			<Marker key={index} name={club.name} lat={club.lat} lng={club.lng}></Marker>
+			<Marker choosenClub={this.state.choosenClub} onHoverEnter={this.onHoverEnter} key={index} name={club.name} lat={club.lat} lng={club.lng}></Marker>
 		));
 		let asideElements = this.props.clubs.map((club, index) => (
-			<AsideBox onHoverEnter={this.onHoverEnter} key={index} title={club.name}></AsideBox>
+			<AsideBox choosenClub={this.state.choosenClub} onHoverEnter={this.onHoverEnter} key={index} title={club.name}></AsideBox>
 		));
 		return (
 			<div className="row">
@@ -38,7 +38,7 @@ export default class TestComponent extends React.Component {
 					</GoogleMapReact>
 				</div>
 				<div className="col-sm-3 no-padding">
-					<h3>List with all places</h3>
+					<h3>Nattklubbar</h3>
 					<div className="aside-list-container">
 						{asideElements}
 					</div>

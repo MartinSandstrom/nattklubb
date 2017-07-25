@@ -34,6 +34,10 @@ body {
 		padding: 10px 15px;
 		border-bottom: 1px solid $grey;
 
+		&.active-aside-box {
+			background-color: $grey;
+		}
+
 		&:first-child {
 			border-top: 1px solid $grey;
 		}
@@ -42,4 +46,8 @@ body {
 			background-color: $grey;
 		}
 	}
+}
+
+.active-club {
+	text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em darkblue;
 }

@@ -8,7 +8,7 @@ export default class TestComponent extends React.Component {
 
 	render() {
 		return (
-			<div className="aside-box" onMouseEnter={() => this.props.onHoverEnter(this.props.title)}>
+			<div className={`aside-box ${this.props.choosenClub === this.props.title ? 'active-aside-box' : ''}`} onMouseEnter={() => this.props.onHoverEnter(this.props.title)}>
 				<h4>{this.props.title}</h4>
 			</div>
 		);
