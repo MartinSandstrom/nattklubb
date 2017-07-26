@@ -71,7 +71,7 @@ export default class TestComponent extends React.Component {
 			}
 		});
 		return (
-			<div className="row">
+			<div>
 				<div className="map-container col-sm-9 no-padding">
 					<GoogleMapReact bootstrapURLKeys={{
 						key: 'AIzaSyAEgBo9VxEFnxjfSjywJEQAJCYQat7SvJs'

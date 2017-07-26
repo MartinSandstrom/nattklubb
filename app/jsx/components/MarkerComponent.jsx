@@ -15,7 +15,7 @@ export default class TestComponent extends React.Component {
 	});
 
 	close = () => {
-		this.props.onClubClick('');
+		this.props.handleClubClick('');
 		this.setState({showInformation: false});
 	}
 

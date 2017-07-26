@@ -59,5 +59,17 @@ export const clubs = [
 				close: '21:00'
 			}
 		]
+	}, {
+		name: 'Östgöta nation',
+		address: 'Trädgårdsgatan 15 Uppsala',
+		lng: 17.637842,
+		lat: 59.855137,
+		openHours: [
+			{
+				id: 3,
+				open: '18:00',
+				close: '01:00'
+			}
+		]
 	}
 ];
