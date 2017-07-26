@@ -15,7 +15,7 @@ export default class TestComponent extends React.Component {
 
 	render() {
 		return (
-			<div className={`aside-box ${this.isActive() ? 'active-aside-box' : ''}`} onMouseEnter={() => this.props.handleHoverEnter(this.props.title)} onClick={this.handleClick}>
+			<div className={`aside-box pointer ${this.isActive() ? 'active-aside-box' : ''}`} onMouseEnter={() => this.props.handleHoverEnter(this.props.title)} onClick={this.handleClick}>
 				<h5>{this.props.title}</h5>
 				<p>
 					<em>{this.props.address}</em>
