@@ -23,10 +23,7 @@ export default class TestComponent extends React.Component {
 		if (this.state.showInformation || (this.props.clickedClub === this.props.name)) {
 			return (
 				<Popover title={this.props.name} close={this.close}>
-					<p>
-						Här kommer lite information om det här stället
-					</p>
-					<OpenHours></OpenHours>
+					<OpenHours openHours={this.props.openHours}></OpenHours>
 				</Popover>
 			);
 		}
@@ -35,7 +32,7 @@ export default class TestComponent extends React.Component {
 	render() {
 		return (
 			<div>
-				<i id={this.props.name} onMouseEnter={() => this.props.onHoverEnter(this.props.name)} onClick={this.toggleInformation} className={`fa fa-map-marker fa-3x pointer club-marker ${this.props.hoveredClub === this.props.name ? 'active-club' : ''}`}></i>
+				<i id={this.props.name} title={this.props.name} onMouseEnter={() => this.props.onHoverEnter(this.props.name)} onClick={this.toggleInformation} className={`fa fa-map-marker fa-3x pointer club-marker ${this.props.hoveredClub === this.props.name ? 'active-club' : ''}`}></i>
 				{this.renderPopover()}
 			</div>
 		);

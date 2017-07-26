@@ -10,6 +10,8 @@ body {
 
 .info-popover {
 	min-width: 200px;
+	position: absolute;
+	z-index: 999999;
 }
 
 .map-container {
@@ -54,4 +56,8 @@ body {
 
 .club-marker:hover {
 	text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em darkblue;
+}
+
+.filters {
+	padding: 10px 15px;
 }

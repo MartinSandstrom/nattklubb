@@ -1,71 +1,63 @@
 export const clubs = [
 	{
 		name: 'Oxid',
-		lng: 18.063240,
-		lat: 59.334591,
-		openHours: {
-			1: {
-				open: '19:00',
-				close: '21:00'
-			},
-			2: {
-				open: '19:00',
-				close: '21:00'
-			},
-			3: {
-				open: '19:00',
-				close: '21:00'
-			},
-			4: {
-				open: '19:00',
-				close: '21:00'
-			},
-			5: {
-				open: '19:00',
-				close: '21:00'
-			},
-			6: {
-				open: '19:00',
-				close: '21:00'
-			},
-			7: {
-				open: '19:00',
-				close: '21:00'
+		address: 'Birger Jarlsgatan 33 Stockholm',
+		lng: 18.068993,
+		lat: 59.337905,
+		openHours: [
+			{
+				id: 3,
+				open: '16:00',
+				close: '03:00'
+			}, {
+				id: 4,
+				open: '16:00',
+				close: '01:00'
+			}, {
+				id: 5,
+				open: '16:00',
+				close: '03:00'
+			}, {
+				id: 6,
+				open: '16:00',
+				close: '03:00'
 			}
-		}
+		]
 	}, {
-		name: 'Berns',
-		lng: 18.073240,
-		lat: 59.334591,
-		openHours: {
-			1: {
+		name: 'Sturecompaniet',
+		address: 'Sturegatan 4 Stockholm',
+		lng: 18.073460,
+		lat: 59.336533,
+		openHours: [
+			{
+				id: 1,
 				open: '19:00',
 				close: '21:00'
-			},
-			2: {
+			}, {
+				id: 2,
 				open: '19:00',
 				close: '21:00'
-			},
-			3: {
-				open: '19:00',
-				close: '21:00'
-			},
-			4: {
-				open: '19:00',
-				close: '21:00'
-			},
-			5: {
-				open: '19:00',
-				close: '21:00'
-			},
-			6: {
-				open: '19:00',
-				close: '21:00'
-			},
-			7: {
+			}, {
+				id: 3,
+				open: '16:00',
+				close: '03:00'
+			}, {
+				id: 4,
+				open: '16:00',
+				close: '01:00'
+			}, {
+				id: 5,
+				open: '16:00',
+				close: '03:00'
+			}, {
+				id: 6,
+				open: '16:00',
+				close: '03:00'
+			}, {
+				id: 7,
 				open: '19:00',
 				close: '21:00'
 			}
-		}
+		]
 	}
 ];
