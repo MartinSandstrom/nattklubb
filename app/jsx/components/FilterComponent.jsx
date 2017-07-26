@@ -18,7 +18,7 @@ export default class TestComponent extends React.Component {
 	render() {
 		return (
 			<div className="filters">
-				<h5 onClick={this.toggle}>Filtrera {this.renderChevron()}</h5>
+				<h5 onClick={this.toggle} className="pointer">Filtrera {this.renderChevron()}</h5>
 				<Collapse isOpen={this.state.isOpen}>
 					<label className="control-label" htmlFor="filterName">Namn</label>
 					<div className="form-group">

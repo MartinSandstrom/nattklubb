@@ -28,9 +28,9 @@ export default class TestComponent extends React.Component {
 		zoom: 13
 	};
 
-	onHoverEnter = (name) => this.setState({hoveredClub: name});
+	handleHoverEnter = (name) => this.setState({hoveredClub: name});
 
-	onClubClick = (name) => this.setState({clickedClub: name});
+	handleClubClick = (name) => this.setState({clickedClub: name});
 
 	setNewCenter = (lat, lng) => {
 		let center = {
@@ -63,10 +63,10 @@ export default class TestComponent extends React.Component {
 		this.props.clubs.forEach((club, index) => {
 			if (this.isInFilter(club)) {
 				clubsElements.push(
-					<Marker openHours={club.openHours} onClubClick={this.onClubClick} clickedClub={this.state.clickedClub} hoveredClub={this.state.hoveredClub} onHoverEnter={this.onHoverEnter} key={index} name={club.name} lat={club.lat} lng={club.lng}></Marker>
+					<Marker openHours={club.openHours} handleClubClick={this.handleClubClick} clickedClub={this.state.clickedClub} hoveredClub={this.state.hoveredClub} handleHoverEnter={this.handleHoverEnter} key={index} name={club.name} lat={club.lat} lng={club.lng}></Marker>
 				);
 				asideElements.push(
-					<AsideBox setNewCenter={this.setNewCenter} onClubClick={this.onClubClick} clickedClub={this.state.clickedClub} hoveredClub={this.state.hoveredClub} onHoverEnter={this.onHoverEnter} key={index} title={club.name} address={club.address} lat={club.lat} lng={club.lng}></AsideBox>
+					<AsideBox setNewCenter={this.setNewCenter} handleClubClick={this.handleClubClick} clickedClub={this.state.clickedClub} hoveredClub={this.state.hoveredClub} handleHoverEnter={this.handleHoverEnter} key={index} title={club.name} address={club.address} lat={club.lat} lng={club.lng}></AsideBox>
 				);
 			}
 		});
