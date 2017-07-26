@@ -9,7 +9,10 @@ export default class TestComponent extends React.Component {
 	render() {
 		return (
 			<div className="filters">
-                <input type="text" onChange={this.props.handleFilterChange} name="name" value={this.props.filterName}></input>
+                <label className="control-label" htmlFor="filterName">Namn</label>
+				<div className="form-group">
+					<input id="filterName" type="text" onChange={this.props.handleFilterChange} name="name" value={this.props.filterName}></input>
+				</div>
 			</div>
 		);
 	}

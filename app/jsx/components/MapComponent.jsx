@@ -45,16 +45,18 @@ export default class TestComponent extends React.Component {
 	isMissingInNameFilter = (clubName) => clubName.indexOf(this.state.filters.name) === -1;
 
 	render() {
-		let clubsElements = this.props.clubs.map((club, index) => {
+		let clubsElements = [];
+		let asideElements = [];
+		this.props.clubs.forEach((club, index) => {
 			if (this.isInFilter(club)) {
-				return (
+				clubsElements.push(
 					<Marker openHours={club.openHours} onClubClick={this.onClubClick} clickedClub={this.state.clickedClub} hoveredClub={this.state.hoveredClub} onHoverEnter={this.onHoverEnter} key={index} name={club.name} lat={club.lat} lng={club.lng}></Marker>
+				);
+				asideElements.push(
+					<AsideBox onClubClick={this.onClubClick} clickedClub={this.state.clickedClub} hoveredClub={this.state.hoveredClub} onHoverEnter={this.onHoverEnter} key={index} title={club.name} address={club.address}></AsideBox>
 				);
 			}
 		});
-		let asideElements = this.props.clubs.map((club, index) => (
-			<AsideBox onClubClick={this.onClubClick} clickedClub={this.state.clickedClub} hoveredClub={this.state.hoveredClub} onHoverEnter={this.onHoverEnter} key={index} title={club.name} address={club.address}></AsideBox>
-		));
 		return (
 			<div className="row">
 				<div className="map-container col-sm-9 no-padding">
