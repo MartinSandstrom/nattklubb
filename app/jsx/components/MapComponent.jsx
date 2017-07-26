@@ -12,6 +12,10 @@ export default class TestComponent extends React.Component {
 			clickedClub: '',
 			filters: {
 				name: ''
+			},
+			center: {
+				lat: 59.334591,
+				lng: 18.063240
 			}
 		};
 	}
@@ -28,10 +32,19 @@ export default class TestComponent extends React.Component {
 
 	onClubClick = (name) => this.setState({clickedClub: name});
 
+	setNewCenter = (lat, lng) => {
+		let center = {
+			lat,
+			lng
+		};
+		this.setState({center});
+	}
+
 	isInFilter = (club) => {
 		if (this.state.filters.name && this.isMissingInNameFilter(club.name)) {
 			return false;
 		}
+		// TODO add more filters here.
 		return true;
 	}
 
@@ -42,7 +55,7 @@ export default class TestComponent extends React.Component {
 		this.setState({filters});
 	}
 
-	isMissingInNameFilter = (clubName) => clubName.indexOf(this.state.filters.name) === -1;
+	isMissingInNameFilter = (clubName) => clubName.toLowerCase().indexOf(this.state.filters.name.toLowerCase()) === -1;
 
 	render() {
 		let clubsElements = [];
@@ -53,7 +66,7 @@ export default class TestComponent extends React.Component {
 					<Marker openHours={club.openHours} onClubClick={this.onClubClick} clickedClub={this.state.clickedClub} hoveredClub={this.state.hoveredClub} onHoverEnter={this.onHoverEnter} key={index} name={club.name} lat={club.lat} lng={club.lng}></Marker>
 				);
 				asideElements.push(
-					<AsideBox onClubClick={this.onClubClick} clickedClub={this.state.clickedClub} hoveredClub={this.state.hoveredClub} onHoverEnter={this.onHoverEnter} key={index} title={club.name} address={club.address}></AsideBox>
+					<AsideBox setNewCenter={this.setNewCenter} onClubClick={this.onClubClick} clickedClub={this.state.clickedClub} hoveredClub={this.state.hoveredClub} onHoverEnter={this.onHoverEnter} key={index} title={club.name} address={club.address} lat={club.lat} lng={club.lng}></AsideBox>
 				);
 			}
 		});
@@ -62,7 +75,7 @@ export default class TestComponent extends React.Component {
 				<div className="map-container col-sm-9 no-padding">
 					<GoogleMapReact bootstrapURLKeys={{
 						key: 'AIzaSyAEgBo9VxEFnxjfSjywJEQAJCYQat7SvJs'
-					}} defaultCenter={this.props.center} defaultZoom={this.props.zoom}>
+					}} zoom={13} center={this.state.center}>
 						{clubsElements}
 					</GoogleMapReact>
 				</div>

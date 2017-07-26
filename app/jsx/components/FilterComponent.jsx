@@ -1,18 +1,30 @@
 import React from 'react';
+import {Collapse} from 'reactstrap';
 
 export default class TestComponent extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			isOpen: false
+		};
 	}
+
+	toggle = () => this.setState({
+		isOpen: !this.state.isOpen
+	});
+
+	renderChevron = () => this.state.isOpen ? <i className="fa fa-chevron-up pull-right"></i> : <i className="fa fa-chevron-down pull-right"></i>;
 
 	render() {
 		return (
 			<div className="filters">
-                <label className="control-label" htmlFor="filterName">Namn</label>
-				<div className="form-group">
-					<input id="filterName" type="text" onChange={this.props.handleFilterChange} name="name" value={this.props.filterName}></input>
-				</div>
+				<h5 onClick={this.toggle}>Filtrera {this.renderChevron()}</h5>
+				<Collapse isOpen={this.state.isOpen}>
+					<label className="control-label" htmlFor="filterName">Namn</label>
+					<div className="form-group">
+						<input id="filterName" type="text" onChange={this.props.handleFilterChange} name="name" value={this.props.filterName} className="form-control"></input>
+					</div>
+				</Collapse>
 			</div>
 		);
 	}
