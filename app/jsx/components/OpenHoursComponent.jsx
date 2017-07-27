@@ -16,7 +16,7 @@ export default class TestComponent extends React.Component {
 		this.state = {};
 	}
 	z
-	formatHours = (hour) => `${hour.open} : ${hour.close} `;
+	formatHours = (hour) => `${hour.open} - ${hour.close} `;
 
 	render() {
 		let openHoursElements = this.props.openHours.map((hour, index) => (
