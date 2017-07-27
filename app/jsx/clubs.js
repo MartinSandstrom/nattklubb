@@ -71,5 +71,89 @@ export const clubs = [
 				close: '01:00'
 			}
 		]
+	}, {
+		name: 'Spy Bar',
+		address: 'Birger Jarlsgatan 20 Stockholm',
+		lng: 18.072190,
+		lat: 59.336497,
+		openHours: [
+			{
+				id: 4,
+				open: '23:00',
+				close: '05:00'
+			}, {
+				id: 5,
+				open: '23:00',
+				close: '05:00'
+			}, {
+				id: 6,
+				open: '23:00',
+				close: '05:00'
+			}
+		]
+	}, {
+		name: 'Kåken',
+		address: 'Regeringsgatan 66 Stockholm',
+		lng: 18.067886,
+		lat: 59.336263,
+		openHours: [
+			{
+				id: 3,
+				open: '18:00',
+				close: '02:00'
+			}, {
+				id: 4,
+				open: '18:00',
+				close: '02:00'
+			}, {
+				id: 5,
+				open: '17:00',
+				close: '02:00'
+			}, {
+				id: 6,
+				open: '18:00',
+				close: '02:00'
+			}
+		]
+	}, {
+		name: 'PURE',
+		address: 'Birger Jarlsgatan 29',
+		lng: 18.069467,
+		lat: 59.337658,
+		openHours: [
+			{
+				id: 5,
+				open: '22:00',
+				close: '03:00'
+			}, {
+				id: 6,
+				open: '22:00',
+				close: '03:00'
+			}
+		]
+	}, {
+		name: 'SOLIDARITET',
+		address: 'Birger Jarlsgatan 29',
+		lng: 18.071720,
+		lat: 59.335427,
+		openHours: [
+			{
+				id: 3,
+				open: '23:00',
+				close: '05:00'
+			}, {
+				id: 4,
+				open: '23:00',
+				close: '05:00'
+			}, {
+				id: 5,
+				open: '23:00',
+				close: '05:00'
+			}, {
+				id: 6,
+				open: '23:00',
+				close: '05:00'
+			}
+		]
 	}
 ];
