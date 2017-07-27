@@ -20,13 +20,9 @@ export default class TestComponent extends React.Component {
 		};
 	}
 
-	static defaultProps = {
-		center: {
-			lat: 59.334591,
-			lng: 18.063240
-		},
-		zoom: 13
-	};
+	componentDidMount = () => navigator.geolocation ? navigator.geolocation.getCurrentPosition(this.showPosition) : false;
+
+	showPosition = (position) => this.setNewCenter(position.coords.latitude, position.coords.longitude);
 
 	handleHoverEnter = (name) => this.setState({hoveredClub: name});
 
