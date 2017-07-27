@@ -78,7 +78,7 @@ export default class TestComponent extends React.Component {
 						{clubsElements}
 					</GoogleMapReact>
 				</div>
-				<div className="col-sm-3 no-padding hidden-xs">
+				<div className="col-sm-3 no-padding hidden-xs aside">
 					<Filter filterValues={filters} handleFilterChange={this.handleFilterChange}></Filter>
 					<div className="aside-list-container">
 						{asideElements}

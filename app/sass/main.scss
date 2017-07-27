@@ -31,7 +31,22 @@ body {
 	padding: 0;
 }
 
+.aside {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	height: 100%;
+	overflow: hidden;
+}
+
 .aside-list-container {
+    overflow-y: scroll;
 	.aside-box {
 		padding: 10px 15px;
 		border-bottom: 1px solid $grey;
