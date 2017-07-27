@@ -22,7 +22,11 @@ export default class TestComponent extends React.Component {
 				<Collapse isOpen={this.state.isOpen}>
 					<label className="control-label" htmlFor="filterName">Namn</label>
 					<div className="form-group">
-						<input id="filterName" type="text" onChange={this.props.handleFilterChange} name="name" value={this.props.filterName} className="form-control"></input>
+						<input id="filterName" type="text" onChange={this.props.handleFilterChange} name="name" value={this.props.filterValues.name} className="form-control"></input>
+					</div>
+					<label className="control-label" htmlFor="filterAddress">Adress</label>
+					<div className="form-group">
+						<input id="filterAddress" type="text" onChange={this.props.handleFilterChange} name="address" value={this.props.filterValues.address} className="form-control"></input>
 					</div>
 				</Collapse>
 			</div>

@@ -11,7 +11,8 @@ export default class TestComponent extends React.Component {
 			hoveredClub: '',
 			clickedClub: '',
 			filters: {
-				name: ''
+				name: '',
+				address: ''
 			},
 			center: {
 				lat: 59.334591,
@@ -37,21 +38,22 @@ export default class TestComponent extends React.Component {
 	}
 
 	isInFilter = (club) => {
-		if (this.state.filters.name && this.isMissingInNameFilter(club.name)) {
+		if (this.state.filters.name && this.isMissingInFilter(club.name, 'name')) {
+			return false;
+		} else if (this.state.filters.address && this.isMissingInFilter(club.address, 'address')) {
+			// TODO add more filters here.
 			return false;
 		}
-		// TODO add more filters here.
 		return true;
 	}
 
 	handleFilterChange = (e) => {
-		let name = e.target.name;
 		let filters = this.state.filters;
-		filters[name] = e.target.value;
+		filters[e.target.name] = e.target.value;
 		this.setState({filters});
 	}
 
-	isMissingInNameFilter = (clubName) => clubName.toLowerCase().indexOf(this.state.filters.name.toLowerCase()) === -1;
+	isMissingInFilter = (value, property) => value.toLowerCase().indexOf(this.state.filters[property].toLowerCase()) === -1;
 
 	render() {
 		let clubsElements = [];
@@ -66,6 +68,7 @@ export default class TestComponent extends React.Component {
 				);
 			}
 		});
+		let filters = this.state.filters;
 		return (
 			<div>
 				<div className="map-container col-sm-9 no-padding">
@@ -76,7 +79,7 @@ export default class TestComponent extends React.Component {
 					</GoogleMapReact>
 				</div>
 				<div className="col-sm-3 no-padding hidden-xs">
-					<Filter filterName={this.state.filters.name} handleFilterChange={this.handleFilterChange}></Filter>
+					<Filter filterValues={filters} handleFilterChange={this.handleFilterChange}></Filter>
 
 					<div className="aside-list-container">
 						{asideElements}
