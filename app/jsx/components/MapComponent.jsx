@@ -80,7 +80,6 @@ export default class TestComponent extends React.Component {
 				</div>
 				<div className="col-sm-3 no-padding hidden-xs">
 					<Filter filterValues={filters} handleFilterChange={this.handleFilterChange}></Filter>
-
 					<div className="aside-list-container">
 						{asideElements}
 					</div>
