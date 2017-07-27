@@ -117,7 +117,7 @@ export const clubs = [
 		]
 	}, {
 		name: 'PURE',
-		address: 'Birger Jarlsgatan 29',
+		address: 'Birger Jarlsgatan 29 Stockholm',
 		lng: 18.069467,
 		lat: 59.337658,
 		openHours: [
@@ -133,7 +133,7 @@ export const clubs = [
 		]
 	}, {
 		name: 'SOLIDARITET',
-		address: 'Birger Jarlsgatan 29',
+		address: 'Birger Jarlsgatan 29 Stockholm',
 		lng: 18.071720,
 		lat: 59.335427,
 		openHours: [
