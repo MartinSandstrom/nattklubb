@@ -9,9 +9,16 @@ body {
 }
 
 .info-popover {
-	min-width: 200px;
+	min-width: 220px;
 	position: absolute;
 	z-index: 999999;
+}
+
+.popover-title-text {
+	max-width: 164px;
+	white-space: nowrap;
+	overflow: hidden;
+	display: inline-block;
 }
 
 .map-container {
@@ -31,6 +38,10 @@ body {
 	padding: 0;
 }
 
+.no-margin {
+	margin: 0;
+}
+
 .aside {
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -46,7 +57,8 @@ body {
 }
 
 .aside-list-container {
-    overflow-y: scroll;
+	overflow-y: scroll;
+
 	.aside-box {
 		padding: 10px 15px;
 		border-bottom: 1px solid $grey;

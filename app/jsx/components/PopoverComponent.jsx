@@ -10,8 +10,10 @@ class PaymentTemplate extends React.Component {
 		return (
 			<div className="panel panel-default info-popover">
 				<div className="panel-heading">
-					{this.props.title}
-					<i className="pull-right fa fa-2x fa-times pointer" onClick={this.props.close}></i>
+					<p className="no-margin">
+						<span className="popover-title-text">{this.props.title}</span>
+						<i className="pull-right fa fa-2x fa-times pointer" onClick={this.props.close}></i>
+					</p>
 				</div>
 				<div className="panel-body">
 					{this.props.children}
