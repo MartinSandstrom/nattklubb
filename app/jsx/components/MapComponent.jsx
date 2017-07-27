@@ -20,9 +20,9 @@ export default class TestComponent extends React.Component {
 		};
 	}
 
-	componentDidMount = () => navigator.geolocation ? navigator.geolocation.getCurrentPosition(this.showPosition) : false;
-
-	showPosition = (position) => this.setNewCenter(position.coords.latitude, position.coords.longitude);
+	// TODO removed because why. You probably dont want to see clubs where you are at the moment and it made the map jump.
+	// componentDidMount = () => navigator.geolocation ? navigator.geolocation.getCurrentPosition(this.showPosition) : false;
+	// showPosition = (position) => this.setNewCenter(position.coords.latitude, position.coords.longitude);
 
 	handleHoverEnter = (name) => this.setState({hoveredClub: name});
 
