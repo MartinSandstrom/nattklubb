@@ -5,9 +5,15 @@ body {
   cursor: pointer; }
 
 .info-popover {
-  min-width: 200px;
+  min-width: 220px;
   position: absolute;
   z-index: 999999; }
+
+.popover-title-text {
+  max-width: 164px;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block; }
 
 .map-container {
   display: -webkit-box;
@@ -24,15 +30,33 @@ body {
 .no-padding {
   padding: 0; }
 
-.aside-list-container .aside-box {
-  padding: 10px 15px;
-  border-bottom: 1px solid #eee; }
-  .aside-list-container .aside-box.active-aside-box {
-    background-color: #eee; }
-  .aside-list-container .aside-box:first-child {
-    border-top: 1px solid #eee; }
-  .aside-list-container .aside-box:hover {
-    background-color: #eee; }
+.no-margin {
+  margin: 0; }
+
+.aside {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden; }
+
+.aside-list-container {
+  overflow-y: scroll; }
+  .aside-list-container .aside-box {
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee; }
+    .aside-list-container .aside-box.active-aside-box {
+      background-color: #eee; }
+    .aside-list-container .aside-box:first-child {
+      border-top: 1px solid #eee; }
+    .aside-list-container .aside-box:hover {
+      background-color: #eee; }
 
 .active-club {
   text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em darkblue; }
