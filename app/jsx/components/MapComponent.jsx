@@ -45,7 +45,6 @@ export default class TestComponent extends React.Component {
 		if (this.state.filters.name && this.isMissingInFilter(club.name, 'name')) {
 			return false;
 		} else if (this.state.filters.address && this.isMissingInFilter(club.address, 'address')) {
-			// TODO add more filters here.
 			return false;
 		} else if (this.state.filters.club && !this.hasKeyword(club.keyWord, 'club')) {
 			return false;
