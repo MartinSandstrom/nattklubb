@@ -5,7 +5,8 @@ export default class TestComponent extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			isOpen: true
+			isOpen: true,
+			modalIsOpen: true
 		};
 	}
 
@@ -41,10 +42,17 @@ export default class TestComponent extends React.Component {
 								<input type="checkbox" id="filterBar" onChange={() => this.props.handleFilterCheckbox('bar')} checked={this.props.filterValues.bar} className="form-control"></input>
 							</div>
 						</div>
-                        <div className="col-xs-6">
+						<div className="col-xs-6">
 							<label className="control-label" htmlFor="filterStudentNation">Studentnationer</label>
 							<div className="form-group">
 								<input type="checkbox" id="filterStudentNation" onChange={() => this.props.handleFilterCheckbox('studentNation')} checked={this.props.filterValues.studentNation} className="form-control"></input>
+							</div>
+						</div>
+						<div className="col-xs-6">
+							<label className="control-label" htmlFor="filterEntrenceFee">Gratis inträde</label>
+							<i className="fa fa-question-circle" title="Detta innebär klubbarj ao"></i>
+							<div className="form-group">
+								<input type="checkbox" id="filterEntrenceFee" onChange={() => this.props.handleFilterCheckbox('freeEntrence')} checked={this.props.filterValues.freeEntrence} className="form-control"></input>
 							</div>
 						</div>
 					</div>

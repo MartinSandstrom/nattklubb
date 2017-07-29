@@ -15,7 +15,8 @@ export default class TestComponent extends React.Component {
 				address: '',
 				club: false,
 				bar: false,
-				studentNation: false
+				studentNation: false,
+				freeEntrence: false
 			},
 			center: {
 				lat: 59.334591,
@@ -51,6 +52,8 @@ export default class TestComponent extends React.Component {
 		} else if (this.state.filters.bar && !this.hasKeyword(club.keyWord, 'bar')) {
 			return false;
 		} else if (this.state.filters.studentNation && !this.hasKeyword(club.keyWord, 'studentNation')) {
+			return false;
+		} else if (this.state.filters.freeEntrence && !club.freeEntrence) {
 			return false;
 		}
 		return true;
