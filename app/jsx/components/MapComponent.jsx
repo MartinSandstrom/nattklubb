@@ -12,7 +12,10 @@ export default class TestComponent extends React.Component {
 			clickedClub: '',
 			filters: {
 				name: '',
-				address: ''
+				address: '',
+				club: false,
+				bar: false,
+				studentNation: false
 			},
 			center: {
 				lat: 59.334591,
@@ -43,6 +46,12 @@ export default class TestComponent extends React.Component {
 		} else if (this.state.filters.address && this.isMissingInFilter(club.address, 'address')) {
 			// TODO add more filters here.
 			return false;
+		} else if (this.state.filters.club && !this.hasKeyword(club.keyWord, 'club')) {
+			return false;
+		} else if (this.state.filters.bar && !this.hasKeyword(club.keyWord, 'bar')) {
+			return false;
+		} else if (this.state.filters.studentNation && !this.hasKeyword(club.keyWord, 'studentNation')) {
+			return false;
 		}
 		return true;
 	}
@@ -52,6 +61,14 @@ export default class TestComponent extends React.Component {
 		filters[e.target.name] = e.target.value;
 		this.setState({filters});
 	}
+
+	handleFilterCheckbox = (name) => {
+		let filters = this.state.filters;
+		filters[name] = !filters[name];
+		this.setState({filters});
+	}
+
+	hasKeyword = (keywords, name) => keywords.some((key) => key === name);
 
 	isMissingInFilter = (value, property) => value.toLowerCase().indexOf(this.state.filters[property].toLowerCase()) === -1;
 
@@ -79,7 +96,7 @@ export default class TestComponent extends React.Component {
 					</GoogleMapReact>
 				</div>
 				<div className="col-sm-3 no-padding hidden-xs aside">
-					<Filter filterValues={filters} handleFilterChange={this.handleFilterChange}></Filter>
+					<Filter handleFilterCheckbox={this.handleFilterCheckbox} filterValues={filters} handleFilterChange={this.handleFilterChange}></Filter>
 					<div className="aside-list-container">
 						{asideElements}
 					</div>

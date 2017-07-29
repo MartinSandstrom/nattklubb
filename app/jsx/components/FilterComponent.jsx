@@ -28,6 +28,26 @@ export default class TestComponent extends React.Component {
 					<div className="form-group">
 						<input id="filterAddress" type="text" onChange={this.props.handleFilterChange} name="address" value={this.props.filterValues.address} className="form-control"></input>
 					</div>
+					<div className="row">
+						<div className="col-xs-6">
+							<label className="control-label" htmlFor="filterClub">Klubbar</label>
+							<div className="form-group">
+								<input type="checkbox" id="filterClub" onChange={() => this.props.handleFilterCheckbox('club')} checked={this.props.filterValues.club} className="form-control"></input>
+							</div>
+						</div>
+						<div className="col-xs-6">
+							<label className="control-label" htmlFor="filterBar">Bar</label>
+							<div className="form-group">
+								<input type="checkbox" id="filterBar" onChange={() => this.props.handleFilterCheckbox('bar')} checked={this.props.filterValues.bar} className="form-control"></input>
+							</div>
+						</div>
+                        <div className="col-xs-6">
+							<label className="control-label" htmlFor="filterStudentNation">Studentnationer</label>
+							<div className="form-group">
+								<input type="checkbox" id="filterStudentNation" onChange={() => this.props.handleFilterCheckbox('studentNation')} checked={this.props.filterValues.studentNation} className="form-control"></input>
+							</div>
+						</div>
+					</div>
 				</Collapse>
 			</div>
 		);
