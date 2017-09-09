@@ -3,6 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import Marker from './MarkerComponent.jsx';
 import AsideBox from './AsideBoxComponent.jsx';
 import Filter from './FilterComponent.jsx';
+import MobileFilter from './MobileFilterComponent.jsx';
 
 export default class TestComponent extends React.Component {
 	constructor(props) {
@@ -90,6 +91,14 @@ export default class TestComponent extends React.Component {
 		let filters = this.state.filters;
 		return (
 			<div>
+				<nav className="navbar navbar-default	navbar-fixed-top">
+					<div className="container-fluid">
+						<div className="navbar-header">
+							<a className="navbar-brand" href="#">Nattklubb.nu</a>
+							<MobileFilter handleFilterCheckbox={this.handleFilterCheckbox} filterValues={filters} handleFilterChange={this.handleFilterChange}></MobileFilter>
+						</div>
+					</div>
+				</nav>
 				<div className="map-container col-sm-9 no-padding">
 					<GoogleMapReact bootstrapURLKeys={{
 						key: 'AIzaSyAEgBo9VxEFnxjfSjywJEQAJCYQat7SvJs'
