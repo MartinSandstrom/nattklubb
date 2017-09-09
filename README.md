@@ -1,5 +1,7 @@
 # nattklubb
 
+Preview: https://martinsandstrom.github.io/nattklubb/
+
 ## Install
 
 ```
@@ -23,7 +25,3 @@
 ```
     $ nodemon app.js
 ```
-
-
-
-
